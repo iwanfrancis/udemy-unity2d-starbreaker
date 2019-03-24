@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour {
 
     // Cached references
-    private GameSession gameStatus;
+    private GameSession gameSession;
 
     private void Start() {
-        gameStatus = FindObjectOfType<GameSession>();
+        gameSession = FindObjectOfType<GameSession>();
     }
 
     public void LoadNextScene() {
@@ -18,7 +18,7 @@ public class SceneLoader : MonoBehaviour {
     }
 
     public void LoadStartScene() {
-        gameStatus.ResetGame();
+        gameSession.ResetGame();
         SceneManager.LoadScene(0);
     }
 
