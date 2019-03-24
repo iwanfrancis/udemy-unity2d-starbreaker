@@ -799,7 +799,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'final score:'
+  m_Text: 'final score: ???'
 --- !u!222 &2038193769
 CanvasRenderer:
   m_ObjectHideFlags: 0
