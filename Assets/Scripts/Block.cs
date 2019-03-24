@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Block : MonoBehaviour {
 
+    // Config paramaters
     [SerializeField] AudioClip breakSound;
     [SerializeField] GameObject blockSparklesVFX;
+    [SerializeField] int maxHits;
 
      // Cached reference
     Level level;
     GameSession gameSession;
+
+    // State Variables
+    [SerializeField] int timesHit; //TODO remove serialize
 
     private void Start() {
         CountBreakableBlocks();
@@ -25,6 +30,14 @@ public class Block : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (tag == "Breakable") {
+            HandleHit();
+        }
+    }
+
+    private void HandleHit() {
+        timesHit++;
+        if (timesHit >= maxHits)
+        {
             DestroyBlock();
         }
     }
